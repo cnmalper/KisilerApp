@@ -21,7 +21,16 @@ class KisilerDaoRepository {
     }
     
     func kaydet(kisi_ad: String, kisi_tel: String) {
-        print("Kisi kaydedildi -> \(kisi_ad) - \(kisi_tel)")
+        
+        db?.open() // baglantiyi ac
+        
+        do {
+            try db!.executeUpdate("INSERT INTO kisiler (kisi_ad, kisi_tel) VALUES (?,?)", values: [kisi_ad, kisi_tel])
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close() // baglantiyi kapat
     }
     
     func guncelle(kisi_id:Int, kisi_ad:String, kisi_tel:String) {

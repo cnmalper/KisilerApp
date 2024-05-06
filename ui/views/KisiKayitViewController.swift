@@ -23,6 +23,7 @@ class KisiKayitViewController: UIViewController {
     @IBAction func buttonKaydet(_ sender: Any) {
         if let ka = tfKisiAd.text, let kt = tfKisiTel.text {
             kisiKayitViewModel.kaydet(kisi_ad: ka, kisi_tel: kt)
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
