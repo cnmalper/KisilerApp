@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eHD-hE-Gbn">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -38,13 +38,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Hhm-sY-Yh1">
                                                     <rect key="frame" x="19.999999999999996" y="15.666666666666664" width="63.666666666666657" height="69"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbs-0R-rbJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbs-0R-rbJ">
                                                             <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="30"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZs-Qz-CLv">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZs-Qz-CLv">
                                                             <rect key="frame" x="0.0" y="45" width="63.666666666666664" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                             <color key="textColor" systemColor="systemGray2Color"/>
@@ -54,8 +54,9 @@
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4f-au-2Mp">
                                                     <rect key="frame" x="326.66666666666669" y="33" width="46.333333333333314" height="34.333333333333343"/>
+                                                    <color key="tintColor" systemColor="systemGreenColor"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled">
+                                                    <buttonConfiguration key="configuration" style="gray">
                                                         <imageReference key="image" image="bookmark.fill" catalog="system" symbolScale="large"/>
                                                     </buttonConfiguration>
                                                     <connections>
@@ -90,8 +91,12 @@
                             <constraint firstItem="ICe-bT-bWn" firstAttribute="top" secondItem="qEP-0W-eFs" secondAttribute="bottom" id="pux-KU-iM7"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" id="eum-Sm-rte">
+                        <imageReference key="image" image="house.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Kisiler" id="CkW-c7-hU0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nTt-qA-yZ0">
+                            <color key="tintColor" systemColor="systemGreenColor"/>
                             <connections>
                                 <segue destination="J3e-pW-4gO" kind="show" id="KfG-Cz-sKT"/>
                             </connections>
@@ -105,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993.1297709923663" y="378.87323943661971"/>
+            <point key="canvasLocation" x="3846.5648854961833" y="378.87323943661971"/>
         </scene>
         <!--Kisi Kayit-->
         <scene sceneID="fvb-dr-u5m">
@@ -126,10 +131,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDN-55-tct">
-                                <rect key="frame" x="50" y="380.33333333333331" width="293" height="31"/>
+                                <rect key="frame" x="50" y="380.33333333333331" width="293" height="32"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Kaydet">
-                                    <fontDescription key="titleFontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="buttonKaydet:" destination="J3e-pW-4gO" eventType="touchUpInside" id="KUk-FP-eOJ"/>
@@ -158,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6h-ve-cZn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2773.2824427480914" y="48.591549295774648"/>
+            <point key="canvasLocation" x="4626.7175572519081" y="48.591549295774648"/>
         </scene>
         <!--Kisi Detay-->
         <scene sceneID="XEC-hg-h36">
@@ -179,10 +185,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPu-Hl-Fnn">
-                                <rect key="frame" x="50" y="380.33333333333331" width="293" height="31"/>
+                                <rect key="frame" x="50" y="380.33333333333331" width="293" height="32"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Guncelle">
-                                    <fontDescription key="titleFontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="buttonGuncelle:" destination="VJk-oo-tRu" eventType="touchUpInside" id="vRl-o0-GD6"/>
@@ -212,34 +219,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVJ-GJ-nB5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2773.2824427480914" y="715.49295774647896"/>
+            <point key="canvasLocation" x="4626.7175572519081" y="715.49295774647896"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eP1-S6-6mH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eHD-hE-Gbn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="sgi-R9-bj3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="TOY-Bm-00i">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemGreenColor"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="XiW-vb-S4k"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EJr-2K-nEP"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRk-0Y-spL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066.4122137404579" y="378.87323943661971"/>
+            <point key="canvasLocation" x="2973.2824427480914" y="378.87323943661971"/>
         </scene>
     </scenes>
     <resources>
         <image name="bookmark.fill" catalog="system" width="110" height="128"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

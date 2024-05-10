@@ -34,15 +34,52 @@ class KisilerDaoRepository {
     }
     
     func guncelle(kisi_id:Int, kisi_ad:String, kisi_tel:String) {
-        print("Kisi kaydedildi -> \(kisi_id) - \(kisi_ad) - \(kisi_tel)")
+        
+        db?.open() // baglantiyi ac
+        
+        do {
+            try db!.executeUpdate("UPDATE kisiler SET kisi_ad = ?, kisi_tel = ? WHERE kisi_id = ?", values: [kisi_ad, kisi_tel, kisi_id])
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close() // baglantiyi kapat
     }
     
-    func sil(kisi_id: Int) {
-        print("Kisi sil: \(kisi_id)")
+    func sil(kisi_id:Int) {
+        
+        db?.open() // baglantiyi ac
+        
+        do {
+            try db!.executeUpdate("DELETE FROM kisiler WHERE kisi_id = ?", values: [kisi_id])
+            kisileriYukle() // database'den silindikten sonra, arayüzün reload edilmesi gerekir.
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close() // baglantiyi kapat
     }
     
     func araSearchBar(arananKisi: String) {
-        print("Kisi araniyor: \(arananKisi)")
+        
+        db?.open() // baglantiyi ac
+        var liste = [Kisiler]()
+        
+        do {
+            let rs = try db!.executeQuery("SELECT * FROM kisiler WHERE kisi_ad like '%\(arananKisi)%'", values: nil)
+            
+            while rs.next() {
+                let kisi = Kisiler.init(kisi_id: Int(rs.string(forColumn: "kisi_id"))!, kisi_ad: rs.string(forColumn: "kisi_ad")!, kisi_tel: rs.string(forColumn: "kisi_tel")!)
+                liste.append(kisi)
+            }
+            
+            kisilerListesi.onNext(liste) // tetiklemek
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        db?.close() // baglantiyi kapat
     }
     
     func kisileriYukle() {

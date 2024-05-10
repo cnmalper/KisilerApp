@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        darkModeAlwaysOn()
+        createGestureRecognizerForKeyboard()
         searchBar.delegate = self
         kisilerTableView.delegate = self
         kisilerTableView.dataSource = self
@@ -25,6 +27,21 @@ class ViewController: UIViewController {
             self.kisilerListesi = liste
             self.kisilerTableView.reloadData()
         })
+        
+        
+    }
+    
+    func createGestureRecognizerForKeyboard() {
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func darkModeAlwaysOn() {
+        overrideUserInterfaceStyle = .dark
     }
     
     override func viewWillAppear(_ animated: Bool) {

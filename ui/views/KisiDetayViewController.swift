@@ -18,15 +18,21 @@ class KisiDetayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        darkModeAlwaysOn()
         if let k = kisi {
             tfKisiAd.text = k.kisi_ad
             tfKisiTel.text = k.kisi_tel
         }
     }
+    
+    func darkModeAlwaysOn() {
+        overrideUserInterfaceStyle = .dark
+    }
 
     @IBAction func buttonGuncelle(_ sender: Any) {
         if let ka = tfKisiAd.text, let kt = tfKisiTel.text, let ki = kisi {
             viewModel.guncelle(kisi_id: ki.kisi_id!, kisi_ad: ka, kisi_tel: kt)
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
