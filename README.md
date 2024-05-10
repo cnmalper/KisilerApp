@@ -1,7 +1,7 @@
-# KisilerApp
+# KisilerApp-MVVM
 <p><img src="https://github.com/cnmalper/KisilerApp/blob/main/AppIcon~ios-marketing.png"/></p>
 
-KisilerApp is an application that makes possible to save your Contacts on your iPhone. You can delete and update all of your data.
+KisilerApp is an application that makes possible to save your Contacts on your iPhone. You can delete, update and search all of your data. 
 
 ## Used
 UISearchBar -> https://developer.apple.com/documentation/uikit/uisearchbar | (Apple Developer Documentation)
