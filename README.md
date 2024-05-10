@@ -4,7 +4,7 @@
 KisilerApp is an application that makes possible to save your Contacts on your iPhone. You can delete and update all of your data.
 
 ## Used
-UISearchbAR -> https://developer.apple.com/documentation/uikit/uisearchbar | (Apple Developer Documentation)
+UISearchBar -> https://developer.apple.com/documentation/uikit/uisearchbar | (Apple Developer Documentation)
 
 UISearchBar provides a text field for entering text, a search button, a bookmark button, and a cancel button.
 
