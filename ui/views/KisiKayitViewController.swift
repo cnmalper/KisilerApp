@@ -12,19 +12,36 @@ class KisiKayitViewController: UIViewController {
     @IBOutlet weak var tfKisiAd: UITextField!
     @IBOutlet weak var tfKisiTel: UITextField!
     
+    var kisiKayitViewModel = KisiKayitViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        darkModeAlwaysOn()
+        createGestureRecognizerForKeyboard()
+    }
+    
+    func createGestureRecognizerForKeyboard() {
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func darkModeAlwaysOn() {
+        overrideUserInterfaceStyle = .dark
     }
 
     @IBAction func buttonKaydet(_ sender: Any) {
         if let ka = tfKisiAd.text, let kt = tfKisiTel.text {
-            kaydet(kisi_ad: ka, kisi_tel: kt)
+            if ka != "" && kt != "" {
+                kisiKayitViewModel.kaydet(kisi_ad: ka, kisi_tel: kt)
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                Common.showAlert(errorTitle: "Missing data!", errorMessage: "Please type all of the data you want to save.", vc: self)
+            }
         }
-    }
-    
-    func kaydet(kisi_ad: String, kisi_tel: String) {
-        print("Kisi kaydedildi -> \(kisi_ad) - \(kisi_tel)")
     }
 }
